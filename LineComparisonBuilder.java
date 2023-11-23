@@ -1,25 +1,42 @@
 import java.util.Scanner;
 
 class LineComparisonBuilder {
-    public static double lengthComputation(double x1, double y1, double x2, double y2) {
-        return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+
+    // length computation method on the given points by user 
+    public static double lengthComputation(String line) {
+        
+         // getting input of points from user 
+         Scanner sc = new Scanner(System.in);
+         String literal = " is : ";  
+        System.out.println("Please Enter the first Point X-cordinate of "+ line + literal);
+        double x1 = sc.nextDouble();
+        System.out.println("Please Enter the first Point Y-cordinate of " + line +literal);
+        double y1 = sc.nextDouble();
+        System.out.println("Please Enter the second Point X-cordinate : " + line +literal);
+        double x2 = sc.nextDouble();
+        System.out.println("Please Enter the second Point Y-cordinate : " + line + literal);
+        double y2 = sc.nextDouble();
+
+        double length= Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+        System.out.println("The total length of the "+ line+ " formed by the Points (" + x1 +"," +y1+
+                " ) and ( " + x2 + "," + y2 + ") is :" + length);
+        return length;
     }
     public static void main(String[] args) {
         System.out.println("Welcome to Line Comparison Computation");
         
-        // getting input of points from user 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Please Enter the first Point X-cordinate: ");
-        double firstxcord = sc.nextDouble();
-        System.out.println("Please Enter the first Point Y-cordinate : ");
-        double firstycord = sc.nextDouble();
-        System.out.println("Please Enter the second Point X-cordinate : ");
-        double secondxcord = sc.nextDouble();
-        System.out.println("Please Enter the second Point Y-cordinate : ");
-        double secondycord = sc.nextDouble();
+       
+        // invoking length computation method
+        double length1 = lengthComputation("line 1");
+        double length2 = lengthComputation("line 2");
+       
+        // checking equality of two lines 
+     
+        String str1 = Double.toString(length1);
+        String str2 = Double.toString(length2);
 
-        // invoking length computation method on the given points by user 
-        System.out.println("The total length of the line formed by the Points (" + firstxcord +"," +firstycord+
-        " ) and ( " +secondxcord + "," + secondycord+ ") is :" + lengthComputation(firstxcord,firstycord,secondxcord,secondycord));
+        System.out.println(str1.equals(str2)); // true or false;
+
+         
     }
 }
