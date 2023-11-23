@@ -38,5 +38,12 @@ class LineComparisonBuilder {
         System.out.println(str1.equals(str2)); // true or false;
 
          
+        /**comparing two lines
+        if str1 == str2 return 0
+        if str1>str2 return +ve
+        if str1<str2 return -ve
+        **/
+        System.out.println(str1.compareTo(str2)); 
+        System.out.println(str2.compareTo(str1));
     }
 }
